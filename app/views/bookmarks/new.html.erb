@@ -1,0 +1,6 @@
+<h2><%= @list.name %> create bookmark</h2>
+<%= simple_form_for [@list, @bookmark ] do |f| %>
+    <%= f.input :comment %>
+    <%= f.submit "Submit review" %>
+
+<% end %>
