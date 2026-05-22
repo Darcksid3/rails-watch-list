@@ -1,7 +1,15 @@
-<h2><%= @list.name %> create bookmark</h2>
-<%= simple_form_for [@list, @bookmark ] do |f| %>
-    <%= f.input :comment %>
-    <%= f.association :movie, input_html: {data: {controller: "tom-select"}} %>
-    <%= f.submit "Submit review" %>
-
-<% end %>
+<main class="container fluid">
+    <div class="row justify-content-center mx-auto">
+        <div class="col-12 col-lg-8 border border-3 border-info shadowed rounded-5 p-5">
+            <div class="bg-secondary rounded p-3 text-center">
+                <h2 class="text-info"> create bookmark</h2>
+                <h3 class="text-info"><%= @list.name %></h3>
+                <%= simple_form_for [@list, @bookmark ] do |f| %>
+                    <%= f.input :comment %>
+                    <%= f.association :movie, input_html: {data: {controller: "tom-select"}} %>
+                    <%= f.submit "Bookmarker", class: "btn btn-outline-info" %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</main>

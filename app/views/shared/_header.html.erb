@@ -1,5 +1,12 @@
-<h1>The Watch List</h1>
-<%= link_to "Listes", lists_path %> | 
-<%= link_to "Nouvelle liste", new_list_path %>
+<div class="container fluid">
+    <div class="row justify-content-center">
+        <div class="col-1 col-lg-8 text-center">
 
-<hr>
+            <h1 class="text-info">The Watch List</h1>
+            <%= link_to "Listes", lists_path, class: "btn btn-outline-info" %> 
+            <%= link_to "Nouvelle liste", new_list_path, class: "btn btn-outline-info" %>
+
+            <hr class="border border-4 border-info">
+        </div>
+    </div>
+</div>
