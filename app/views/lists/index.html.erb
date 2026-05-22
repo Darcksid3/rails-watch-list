@@ -1,11 +1,10 @@
-<h2>Les Listes</h2>
-<%= link_to "Listes", lists_path %> |<%= link_to "Nouvelle liste", new_list_path %>
 
-<hr>
 <div>
     <ul>
     <% @lists.each do |list| %>
-        <li> <%= link_to list.name, list_path(list) %></li>
+        <li> <%= link_to list.name, list_path(list) %> - 
+        <%= link_to "Delete", list_path(list), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </li>
     <% end %>
     </ul>
 </div>

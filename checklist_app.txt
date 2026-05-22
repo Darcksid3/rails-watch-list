@@ -1,0 +1,30 @@
+En tant qu’utilisateur, je peux voir toutes mes listes de films.
+GET "lists"
+
+En tant qu’utilisateur, je peux créer une liste de films.
+GET "lists/new"
+POST "lists"
+=OK=
+
+En tant qu’utilisateur, je peux voir les détails d’une liste de films.
+GET "lists/42"
+=OK=
+
+En tant qu’utilisateur, je peux marquer (bookmark) un film dans une liste de films.
+GET "lists/42/bookmarks/new"
+POST "lists/42/bookmarks"
+
+=ok=
+
+En tant qu’utilisateur, je peux détruire un bookmark.
+DELETE "bookmarks/25"
+
+=OK=
+
+Quand tu supprimes une liste, tu dois supprimer tous les signets associés (mais pas les films, car ils peuvent être indiqués en référence dans d’autres listes)
+
+Delete 'List/2'
+
+=OK=
+
+
