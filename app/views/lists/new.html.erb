@@ -5,6 +5,7 @@
                 <h2 class="text-info">Nouvelle liste</h2>
                 <%= simple_form_for [@list] do |f| %>
                     <%= f.input :name, class: "text-info" %>
+                    <%= f.input :photo, as: :file %>
                     <%= f.submit "crée", class: "btn btn-outline-info" %>
                 <% end %>
             </div>

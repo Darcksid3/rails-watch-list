@@ -1,13 +1,18 @@
 <main class="container fluid">
-    <div class="row justify-content-center mx-auto">
-        <div class="col-12 col-lg-8 border border-3 border-info shadowed rounded-5 p-5">
-            <ul class="list-group">
-            <% @lists.each do |list| %>
-                <li class="list-group-item d-flex justify-content-between bg-secondary"> <%= link_to list.name, list_path(list),  class: "btn btn-outline-info" %> 
-                <%= link_to '<i class="fa-solid fa-trash text-info"></i>'.html_safe, list_path(list),  data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-                </li>
-            <% end %>
-            </ul>
-        </div>
+  <div class="row justify-content-center mx-auto">
+    <div class="col-12 col-lg-8 border border-3 border-info shadowed rounded-5 p-5">
+      <ul class="list-group">
+        <% my_image = [] %>
+        <% @lists.each do |list| %>
+        <li class="list-group-item d-flex justify-content-between bg-secondary"> 
+          <!-- Vérification de la présence d'une image attaché a la liste --> 
+          <% list.photo.key == nil ? img = "oaeun7f4j96iz9klf50rdmsauu5g" : img = list.photo.key %>
+          <%= cl_image_tag(img, width: 50, height: 50, crop: :fill) %>
+          <%= link_to list.name, list_path(list),  class: "btn btn-outline-info" %> 
+        <%= link_to '<i class="fa-solid fa-trash text-info"></i>'.html_safe, list_path(list),  data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </li>
+        <% end %>
+      </ul>
     </div>
+  </div>
 </main>
